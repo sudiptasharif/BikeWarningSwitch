@@ -32,7 +32,10 @@ public class Trial {
     }
 
     public void setT2(String t2) {
-        setT2(Long.parseLong(t2));
+        if (t2 != null)
+            setT2(Long.parseLong(t2));
+        else
+            setT2(0);
     }
 
     public void setT3(double t3) {
