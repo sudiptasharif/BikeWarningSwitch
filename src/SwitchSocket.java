@@ -33,8 +33,10 @@ public class SwitchSocket {
     public boolean sendAlertSignal(Trial trial) {
         try {
             trial.setT1(System.currentTimeMillis());
-            out.println(1); // 1 = alert signal
+            // 1 = alert signal
+            out.println(1);
             trial.setT2(in.readLine());
+            trial.printT1T2InSecAndMillis();
             return true;
         } catch (IOException e) {
             System.err.println("Couldn't send alert signal " + hostName);

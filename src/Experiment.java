@@ -27,6 +27,7 @@ public class Experiment {
             String userInput = stdIn.readLine();
             while((userInput.equalsIgnoreCase("y") || (!userInput.equalsIgnoreCase("n")))) {
                 if(!userInput.equalsIgnoreCase("y")) {
+                    System.out.println();
                     System.out.println(SUtil.INVALID_Y_N_INPUT);
                     System.out.println(SUtil.ASK_SEND_ALART_SIGNAL);
                     userInput = stdIn.readLine();
@@ -35,6 +36,7 @@ public class Experiment {
                     if(switchSocket.sendAlertSignal(trial)) {
                         trial.setT3(getT3FromUser(stdIn));
                         trialList.add(trial);
+                        System.out.println();
                         System.out.println(SUtil.ASK_SEND_ALART_SIGNAL);
                         userInput = stdIn.readLine();
                     }
@@ -54,6 +56,7 @@ public class Experiment {
         String userInput = stdIn.readLine();
         while((userInput.equalsIgnoreCase("y") || (!userInput.equalsIgnoreCase("n")))) {
             if(!userInput.equalsIgnoreCase("y")) {
+                System.out.println();
                 System.out.println(SUtil.ASK_SAVE_EXPERIMENT);
                 userInput = stdIn.readLine();
             } else {
@@ -69,6 +72,7 @@ public class Experiment {
         try {
             t3 = Double.parseDouble(userInput);
         } catch (IllegalArgumentException e) {
+            System.out.println();
             System.out.println(SUtil.INVALID_T3_USER_INPUT);
             getT3FromUser(stdIn);
         }
