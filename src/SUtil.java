@@ -10,16 +10,17 @@ public class SUtil {
     public static final long DEFAULT_MILLISECOND = 0;
     public static final int FACTOR_SECOND = 60;
     public static final int FACTOR_MILLISECOND = 1000;
-    public static final String ASK_START_EXP = "Start new experiment? (y/n)";
-    public static final String ASK_SEND_ALART_SIGNAL = "Send alert signal? (y/n)";
-    public static final String ASK_SAVE_EXPERIMENT = "Save experiment? (y/n)";
-    public static final String ASK_T3 = "Please enter T3";
-    public static final String INVALID_Y_N_INPUT = "Invalid input. Please enter y/n";
-    public static final String INVALID_T3_USER_INPUT = "Invalid T3. Must be decimal.";
+    public static final String START_EXP = "Start new experiment? (y/n)";
+    public static final String SEND_ALART_SIGNAL = "Send alert signal? (y/n)";
+    public static final String SAVE_EXPERIMENT = "Save experiment? (y/n)";
+    public static final String ASK_T3 = "Please enter t3:";
+    public static final String INVALID_YN = "Invalid input. Please enter y/n";
+    public static final String INVALID_T3 = "Invalid t3. Must be decimal.";
     public static final String APP_NAME = "SwitchBikeApp";
-    public static final String CLOSE_APP_MSG = "Closing " + SUtil.APP_NAME + "...";
-    public static final String SERVER_CONNECTED = "Connected to server.";
-    public static final String SERVER_UNABLE_CONNECTION = "Unable to connect to server.";
+    public static final String CLOSE_MSG = "Closing " + SUtil.APP_NAME + " Client.";
+    public static final String CONNECTION_SUCCESS = "Connected to server.";
+    public static final String CONNECTION_FAILURE = "Unable to connect to server.";
+    public static final String INVALID_APP_USAGE = "Usage: java SwitchBikeApp <host name> <port number>";
 
 
     public static String formatDate(Calendar calendar, String dateFormatPattern){

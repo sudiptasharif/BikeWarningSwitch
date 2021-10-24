@@ -1,3 +1,5 @@
+import java.util.concurrent.TimeUnit;
+
 public class Trial {
     private long t1;
     private long t2;
@@ -41,21 +43,23 @@ public class Trial {
         String t1 = getTInSecAndMillis(this.t1);
         String t2 = getTInSecAndMillis(this.t2);
         String t3 = Double.toString(this.t3);
-        String formatString = "%10d %10s %10s %10s%n";
+        String formatString = "%10d %10s %20s %10s%n";
         System.out.format(formatString, (trialNumber+1), t1, t2, t3);
     }
 
     public void printT1T2InSecAndMillis() {
         String t1 = getTInSecAndMillis(this.t1);
         String t2 = getTInSecAndMillis(this.t2);
-        String formatString = "t1: %10s%nt2: %10sn";
+        String formatString = "t1: %10s%nt2: %10s%n";
         System.out.format(formatString, t1, t2);
     }
 
     public String getTInSecAndMillis(long t) {
-        double seconds = (t / SUtil.FACTOR_MILLISECOND) % SUtil.FACTOR_SECOND;
-        double millis = t % SUtil.FACTOR_MILLISECOND;
-        return seconds + "." + millis;
+        int seconds = (int) (t / SUtil.FACTOR_MILLISECOND) % SUtil.FACTOR_SECOND;
+        int millis = (int) t % SUtil.FACTOR_MILLISECOND;
+        //return seconds + "." + millis;
+        return Long.toString(t);
+        //return String.format("%d.%d", TimeUnit.MILLISECONDS.toSeconds(t), TimeUnit.MILLISECONDS.toMillis(t));
     }
 
 }
