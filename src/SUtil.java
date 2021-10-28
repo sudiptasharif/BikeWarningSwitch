@@ -16,11 +16,11 @@ public class SUtil {
     public static final String ASK_T3 = "Please enter t3:";
     public static final String INVALID_YN = "Invalid input. Please enter y/n";
     public static final String INVALID_T3 = "Invalid t3. Must be decimal.";
-    public static final String APP_NAME = "SwitchBikeApp";
+    public static final String APP_NAME = "SwitchBikeSignal";
     public static final String CLOSE_MSG = "Closing " + SUtil.APP_NAME + " Client.";
     public static final String CONNECTION_SUCCESS = "Connected to server.";
     public static final String CONNECTION_FAILURE = "Unable to connect to server.";
-    public static final String INVALID_APP_USAGE = "Usage: java SwitchBikeApp <host name> <port number>";
+    public static final String INVALID_APP_USAGE = "Usage: java SwitchBikeSignal <host name> <port number>";
 
 
     public static String formatDate(Calendar calendar, String dateFormatPattern){
