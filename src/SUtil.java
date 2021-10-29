@@ -10,7 +10,7 @@ public class SUtil {
     public static final long DEFAULT_MILLISECOND = 0;
     public static final int FACTOR_SECOND = 60;
     public static final int FACTOR_MILLISECOND = 1000;
-    public static final String START_EXP = "Start new experiment? (y/n)";
+    public static final String START_EXPERIMENT = "Start new experiment? (y/n)";
     public static final String SEND_ALART_SIGNAL = "Send alert signal? (y/n)";
     public static final String SAVE_EXPERIMENT = "Save experiment? (y/n)";
     public static final String ASK_T3 = "Please enter t3:";
