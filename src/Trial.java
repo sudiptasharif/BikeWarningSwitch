@@ -53,7 +53,7 @@ public class Trial {
     public void printT1T2InSecAndMillis() {
         String t1 = getTInSecAndMillis(this.t1);
         String t2 = getTInSecAndMillis(this.t2);
-        String formatString = "t1: %10s%nt2: %10s%n";
+        String formatString = "T2: %10s%nT3: %10s%n";
         System.out.format(formatString, t1, t2);
     }
 

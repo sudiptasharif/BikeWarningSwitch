@@ -16,7 +16,7 @@ public class Experiment {
 
     public void printExperiment() {
         System.out.println("Experiment Date: " + SUtil.formatDate(expDatetime, SUtil.USER_FRIENDLY_DATE_TIME_FORMAT));
-        System.out.format("%10s %10s %20s %10s%n", "Trial #", "t1", "t2", "t3");
+        System.out.format("%10s %10s %20s %10s%n", "Trial #", "T2(ms)", "T3(ms)", "T4(ms)");
         for (int i = 0; i < trialList.size(); i++) {
             trialList.get(i).printTrial(i);
         }
