@@ -33,10 +33,6 @@ public class SwitchSocket {
     public boolean sendAlertSignal(Trial trial) {
         try {
             trial.setT1(System.currentTimeMillis());
-            // Note: this "alert" msg in checked/verified in the server
-            // as it's understood, given the context of this app, only one
-            // signal/msg will be sent from the switch client. And
-            // there can only be one switch client.
             out.println("alert");
             trial.setT2(in.readLine());
             trial.printT1T2InSecAndMillis();

@@ -21,6 +21,7 @@ public class SUtil {
     public static final String CONNECTION_SUCCESS = "Connected to server.";
     public static final String CONNECTION_FAILURE = "Unable to connect to server.";
     public static final String INVALID_APP_USAGE = "Usage: java SwitchBikeSignal <host name> <port number>";
+    public static final String CONNECTING = "Connecting to server...";
 
 
     public static String formatDate(Calendar calendar, String dateFormatPattern){

@@ -25,7 +25,7 @@ public class SwitchBikeSignal {
 
     private static SwitchSocket getServerBikeAppConn(String serverHostName, int portNumber) {
         SwitchSocket switchSocket = new SwitchSocket(serverHostName, portNumber);
-        System.out.println("Connecting to server...");
+        System.out.println(SUtil.CONNECTING);
         if(switchSocket.connectToServer()) {
             System.out.println(SUtil.CONNECTION_SUCCESS);
             return switchSocket;
