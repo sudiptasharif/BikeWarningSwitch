@@ -2,6 +2,7 @@ import java.io.*;
 import java.net.*;
 
 public class SwitchSocket {
+    private static final String TAG = "SwitchSocket";
     private Socket socket;
     private PrintWriter out;
     private BufferedReader in;
@@ -33,13 +34,17 @@ public class SwitchSocket {
     public boolean sendAlertSignal(Trial trial) {
         try {
             trial.setT1(System.currentTimeMillis());
+            System.out.println(TAG + "Sending alert to app");
             out.println("alert");
-            trial.setT2(in.readLine());
+            while(in.readLine() != null) {
+                trial.setT2(in.readLine());
+            }
             trial.printT1T2InSecAndMillis();
             return true;
         } catch (IOException e) {
             System.err.println("Couldn't send alert signal " + hostName);
             System.err.println("Exception msg: " + e.getMessage());
+            //e.printStackTrace();
             return false;
         }
     }

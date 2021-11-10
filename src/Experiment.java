@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 
 public class Experiment {
+    private static final String TAG = "Experiment";
     private Calendar expDatetime;
     private ArrayList<Trial> trialList;
     private SwitchSocket switchSocket;

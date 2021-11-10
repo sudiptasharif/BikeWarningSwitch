@@ -1,6 +1,7 @@
 import java.util.concurrent.TimeUnit;
 
 public class Trial {
+    private static final String TAG = "Trial";
     private long t1;
     private long t2;
     private double t3;

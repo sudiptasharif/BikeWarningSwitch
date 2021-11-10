@@ -3,6 +3,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class SwitchBikeSignal {
+    private static final String TAG = "SwitchBikeSignal";
     public static void main(String[] args) {
         if(isValidInput(args)) {
             System.out.println("\nSwitch Bike Signal App\n");
