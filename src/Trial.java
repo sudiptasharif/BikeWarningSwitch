@@ -10,14 +10,6 @@ public class Trial {
         t3 = SUtil.DEFAULT_MILLISECOND;
     }
 
-    public long getT2() {
-        return t2;
-    }
-
-    public long getT3() {
-        return t3;
-    }
-
     public void setT2(long t2) {
         this.t2 = t2;
     }
@@ -34,8 +26,8 @@ public class Trial {
     }
 
     public void printTrial(int trialNumber) {
-        String t1 = getTInSecAndMillis(this.t2);
-        String t2 = getTInSecAndMillis(this.t3);
+        String t2 = getTInSecAndMillis(this.t2);
+        String t3 = getTInSecAndMillis(this.t3);
         String formatString = "%10d %10s %20s%n";
         System.out.format(formatString, (trialNumber+1), t2, t3);
     }
