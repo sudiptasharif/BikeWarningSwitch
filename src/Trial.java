@@ -2,49 +2,49 @@ import java.util.concurrent.TimeUnit;
 
 public class Trial {
     private static final String TAG = "Trial";
-    private long t1;
     private long t2;
+    private long t3;
 
     public Trial() {
-        t1 = SUtil.DEFAULT_MILLISECOND;
         t2 = SUtil.DEFAULT_MILLISECOND;
-    }
-
-    public long getT1() {
-        return t1;
+        t3 = SUtil.DEFAULT_MILLISECOND;
     }
 
     public long getT2() {
         return t2;
     }
 
-    public void setT1(long t1) {
-        this.t1 = t1;
+    public long getT3() {
+        return t3;
     }
 
     public void setT2(long t2) {
         this.t2 = t2;
     }
 
-    public void setT2(String t2) {
-        if (t2 != null)
-            setT2(Long.parseLong(t2));
+    public void setT3(long t3) {
+        this.t3 = t3;
+    }
+
+    public void setT3(String t3) {
+        if (t3 != null)
+            setT3(Long.parseLong(t3));
         else
-            setT2(0);
+            setT3(0);
     }
 
     public void printTrial(int trialNumber) {
-        String t1 = getTInSecAndMillis(this.t1);
-        String t2 = getTInSecAndMillis(this.t2);
+        String t1 = getTInSecAndMillis(this.t2);
+        String t2 = getTInSecAndMillis(this.t3);
         String formatString = "%10d %10s %20s%n";
-        System.out.format(formatString, (trialNumber+1), t1, t2);
+        System.out.format(formatString, (trialNumber+1), t2, t3);
     }
 
-    public void printT1T2InSecAndMillis() {
-        String t1 = getTInSecAndMillis(this.t1);
+    public void printTsInSecAndMillis() {
         String t2 = getTInSecAndMillis(this.t2);
+        String t3 = getTInSecAndMillis(this.t3);
         String formatString = "T2: %10s%nT3: %10s%n";
-        System.out.format(formatString, t1, t2);
+        System.out.format(formatString, t2, t3);
     }
 
     public String getTInSecAndMillis(long t) {

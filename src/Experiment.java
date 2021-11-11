@@ -34,7 +34,6 @@ public class Experiment {
             } else {
                 Trial trial = new Trial();
                 if(switchSocket.sendAlertSignal(trial)) {
-                    // trial.setT3(getT3FromUser(stdIn));
                     trialList.add(trial);
                     System.out.println(SUtil.SEND_ALART_SIGNAL);
                     userInput = stdIn.readLine();
