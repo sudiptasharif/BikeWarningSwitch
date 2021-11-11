@@ -34,11 +34,12 @@ public class SwitchSocket {
     public boolean sendAlertSignal(Trial trial) {
         try {
             trial.setT1(System.currentTimeMillis());
-            System.out.println(TAG + "Sending alert to app");
+            System.out.println(TAG + ": Sending alert to app");
             out.println("alert");
-            while(in.readLine() != null) {
-                trial.setT2(in.readLine());
-            }
+            trial.setT2(in.readLine());
+//            while(in.readLine() != null) {
+//                trial.setT2(in.readLine());
+//            }
             trial.printT1T2InSecAndMillis();
             return true;
         } catch (IOException e) {
