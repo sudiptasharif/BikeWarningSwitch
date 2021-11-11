@@ -17,7 +17,7 @@ public class Experiment {
 
     public void printExperiment() {
         System.out.println("Experiment Date: " + SUtil.formatDate(expDatetime, SUtil.USER_FRIENDLY_DATE_TIME_FORMAT));
-        System.out.format("%10s %10s %20s %10s%n", "Trial #", "T2(ms)", "T3(ms)", "T4(ms)");
+        System.out.format("%10s %10s %20s%n", "Trial #", "T2(ms)", "T3(ms)");
         for (int i = 0; i < trialList.size(); i++) {
             trialList.get(i).printTrial(i);
         }
@@ -35,7 +35,7 @@ public class Experiment {
                 Trial trial = new Trial();
                 if(switchSocket.sendAlertSignal(trial)) {
                     // trial.setT3(getT3FromUser(stdIn));
-                    // trialList.add(trial);
+                    trialList.add(trial);
                     System.out.println(SUtil.SEND_ALART_SIGNAL);
                     userInput = stdIn.readLine();
                 }

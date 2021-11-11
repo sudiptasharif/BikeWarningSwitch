@@ -4,12 +4,10 @@ public class Trial {
     private static final String TAG = "Trial";
     private long t1;
     private long t2;
-    private double t3;
 
     public Trial() {
         t1 = SUtil.DEFAULT_MILLISECOND;
         t2 = SUtil.DEFAULT_MILLISECOND;
-        t3 = SUtil.DEFAULT_MILLISECOND;
     }
 
     public long getT1() {
@@ -18,10 +16,6 @@ public class Trial {
 
     public long getT2() {
         return t2;
-    }
-
-    public double getT3() {
-        return t3;
     }
 
     public void setT1(long t1) {
@@ -39,16 +33,11 @@ public class Trial {
             setT2(0);
     }
 
-    public void setT3(double t3) {
-        this.t3 = t3;
-    }
-
     public void printTrial(int trialNumber) {
         String t1 = getTInSecAndMillis(this.t1);
         String t2 = getTInSecAndMillis(this.t2);
-        String t3 = Double.toString(this.t3);
-        String formatString = "%10d %10s %20s %10s%n";
-        System.out.format(formatString, (trialNumber+1), t1, t2, t3);
+        String formatString = "%10d %10s %20s%n";
+        System.out.format(formatString, (trialNumber+1), t1, t2);
     }
 
     public void printT1T2InSecAndMillis() {
