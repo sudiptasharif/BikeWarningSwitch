@@ -16,8 +16,8 @@ public class Experiment {
     }
 
     public void printExperiment() {
-        System.out.println("Experiment Date: " + SUtil.formatDate(expDatetime, SUtil.USER_FRIENDLY_DATE_TIME_FORMAT));
-        System.out.format("%10s %10s %20s%n", "Trial #", "T2(ms)", "T3(ms)");
+        System.out.println("Experiment Date: " + SUtil.formatDate(expDatetime, SUtil.DATE_FORMAT_USER_FRIENDLY));
+        System.out.format("%10s %10s %20s%n", "Trial #", "T2", "T3");
         for (int i = 0; i < trialList.size(); i++) {
             trialList.get(i).printTrial(i);
         }
@@ -56,18 +56,4 @@ public class Experiment {
             }
         }
     }
-
-    private double getT3FromUser(BufferedReader stdIn) throws IOException {
-        double t3 = 0.0;
-        System.out.println(SUtil.ASK_T3);
-        String userInput = stdIn.readLine();
-        try {
-            t3 = Double.parseDouble(userInput);
-            return t3;
-        } catch (IllegalArgumentException e) {
-            System.err.println(SUtil.INVALID_T3);
-            return getT3FromUser(stdIn);
-        }
-    }
-
 }

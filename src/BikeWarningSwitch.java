@@ -2,11 +2,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class SwitchBikeSignal {
-    private static final String TAG = "SwitchBikeSignal";
+public class BikeWarningSwitch {
+    private static final String TAG = "BikeWarningSwitch";
     public static void main(String[] args) {
         if(isValidInput(args)) {
-            System.out.println("\nSwitch Bike Signal App\n");
+            System.out.println("\n"+SUtil.APP_NAME+"\n");
             SwitchSocket switchClient = getServerBikeAppConn(args[0], Integer.parseInt(args[1]));
             if (switchClient != null) {
                 startApp(switchClient);

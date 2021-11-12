@@ -40,11 +40,8 @@ public class Trial {
     }
 
     public String getTInSecAndMillis(long t) {
-        int seconds = (int) (t / SUtil.FACTOR_MILLISECOND) % SUtil.FACTOR_SECOND;
-        int millis = (int) t % SUtil.FACTOR_MILLISECOND;
-        //return seconds + "." + millis;
-        return Long.toString(t);
-        //return String.format("%d.%d", TimeUnit.MILLISECONDS.toSeconds(t), TimeUnit.MILLISECONDS.toMillis(t));
+        //return SUtil.formatDate(t, SUtil.DATE_FORMAT_ss_SSS);
+        return SUtil.formatDate(t, SUtil.DATE_FORMAT_HH_MM_ss_SSS);
     }
 
 }
