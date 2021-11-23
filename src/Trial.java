@@ -1,5 +1,3 @@
-import java.util.concurrent.TimeUnit;
-
 public class Trial {
     private static final String TAG = "Trial";
     private long t2;

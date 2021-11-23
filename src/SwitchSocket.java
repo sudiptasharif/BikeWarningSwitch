@@ -36,7 +36,7 @@ public class SwitchSocket {
         String t3;
         try {
             System.out.println(TAG + ": Sending alert to app");
-            out.println("alert");
+            out.println("1");
             t3 = in.readLine();
             trial.setT2(t2);
             trial.setT3(t3);
