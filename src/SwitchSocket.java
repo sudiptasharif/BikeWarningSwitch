@@ -19,7 +19,7 @@ public class SwitchSocket {
             socket = new Socket(hostName, portNumber);
             out = new PrintWriter(socket.getOutputStream(), true);
             in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-            return true;
+            return checkServerOnState(in.readLine());
         } catch(UnknownHostException e) {
             System.err.println("Unknown host: " + hostName);
             System.err.println("Exception msg: " + e.getMessage());
@@ -62,6 +62,14 @@ public class SwitchSocket {
         } catch (IOException e) {
             System.err.println("Error closing socket resources");
             System.err.println("Exception msg: " + e.getMessage());
+            return false;
+        }
+    }
+
+    public boolean checkServerOnState(String state) {
+        if(state != null && state.equalsIgnoreCase(Integer.toString(SUtil.SERVER_ON))) {
+            return true;
+        }else {
             return false;
         }
     }

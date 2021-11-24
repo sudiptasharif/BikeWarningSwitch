@@ -6,13 +6,13 @@ public class BikeWarningSwitch {
     private static final String TAG = "BikeWarningSwitch";
     public static void main(String[] args) {
         if(isValidInput(args)) {
-            System.out.println("\n"+SUtil.APP_NAME+"\n");
+            System.out.println("\n"+SUtil.APP_START_MSG);
             SwitchSocket switchClient = getServerBikeAppConn(args[0], Integer.parseInt(args[1]));
             if (switchClient != null) {
                 startApp(switchClient);
             }
         }
-        System.out.println(SUtil.CLOSE_MSG);
+        System.out.println(SUtil.APP_CLOSE_MSG);
         System.exit(1);
     }
 

@@ -13,12 +13,16 @@ public class SUtil {
     public static final String SEND_ALART_SIGNAL = "Send alert signal? (y/n)";
     public static final String SAVE_EXPERIMENT = "Save experiment? (y/n)";
     public static final String INVALID_YN = "Invalid input. Please enter y/n";
-    public static final String APP_NAME = "Bike Warning Switch App";
-    public static final String CLOSE_MSG = "Closing " + SUtil.APP_NAME + " Client.";
-    public static final String CONNECTION_SUCCESS = "Connected to server.";
-    public static final String CONNECTION_FAILURE = "Unable to connect to server.";
+    public static final String APP_NAME = "Bike Warning Switch Client";
+    public static final String APP_CLOSE_MSG = "Closing: " + SUtil.APP_NAME + "\n";
+    public static final String CONNECTION_SUCCESS = "Connection SUCCESSFUL\n";
+    public static final String CONNECTION_FAILURE = "Connection FAILED\n\nMake sure server is on\nIn App Press Button: START LISTENING\n";
     public static final String INVALID_APP_USAGE = "Usage: java BikeWarningSwitch <host name> <port number>";
     public static final String CONNECTING = "Connecting to server...";
+    public static final int SERVER_ON = 0;
+    public static final int SERVER_OFF = 1;
+    public static final String APP_START_MSG = "Starting: " + SUtil.APP_NAME + "\n";
+
 
 
     public static String formatDate(Calendar calendar, String dateFormatPattern){
