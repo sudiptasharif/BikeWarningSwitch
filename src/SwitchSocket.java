@@ -36,12 +36,17 @@ public class SwitchSocket {
         String t3;
         try {
             System.out.println(TAG + ": Sending alert to app");
-            out.println("1");
+            out.println("6");
             t3 = in.readLine();
-            trial.setT2(t2);
-            trial.setT3(t3);
-            trial.printTsInSecAndMillis();
-            return true;
+            if(t3 != null && !t3.equalsIgnoreCase(Integer.toString(SUtil.INVALID_SIGNAL_CODE))){
+                trial.setT2(t2);
+                trial.setT3(t3);
+                trial.printTsInSecAndMillis();
+                return true;
+            }else {
+                System.out.println("Invalid Signal Sent\n");
+                return false;
+            }
         } catch (IOException e) {
             System.err.println("Couldn't send alert signal " + hostName);
             System.err.println("Exception msg: " + e.getMessage());

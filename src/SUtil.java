@@ -22,6 +22,7 @@ public class SUtil {
     public static final int SERVER_ON = 0;
     public static final int SERVER_OFF = 1;
     public static final String APP_START_MSG = "Starting: " + SUtil.APP_NAME + "\n";
+    public static final int INVALID_SIGNAL_CODE = -1;
 
 
 

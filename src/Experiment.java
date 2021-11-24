@@ -26,22 +26,26 @@ public class Experiment {
     public void startExperiment(BufferedReader stdIn) throws IOException {
         System.out.println(SUtil.SEND_ALART_SIGNAL);
         String userInput = stdIn.readLine();
-        while((userInput.equalsIgnoreCase("y") || (!userInput.equalsIgnoreCase("n")))) {
+        boolean isAlertSentSuccessfully = true;
+        while(isAlertSentSuccessfully && (userInput.equalsIgnoreCase("y") || (!userInput.equalsIgnoreCase("n")))) {
             if(!userInput.equalsIgnoreCase("y")){
                 System.out.println(SUtil.INVALID_YN);
                 System.out.println(SUtil.SEND_ALART_SIGNAL);
                 userInput = stdIn.readLine();
             } else {
                 Trial trial = new Trial();
-                if(switchSocket.sendAlertSignal(trial)) {
+                isAlertSentSuccessfully = switchSocket.sendAlertSignal(trial);
+                if(isAlertSentSuccessfully) {
                     trialList.add(trial);
                     System.out.println(SUtil.SEND_ALART_SIGNAL);
                     userInput = stdIn.readLine();
                 }
             }
         }
-        printExperiment();
-        saveExperiment(stdIn);
+        if(isAlertSentSuccessfully) {
+            printExperiment();
+            saveExperiment(stdIn);
+        }
     }
 
     private void saveExperiment(BufferedReader stdIn) throws IOException {
