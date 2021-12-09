@@ -36,7 +36,7 @@ public class SwitchSocket {
         String t3;
         try {
             System.out.println(TAG + ": Sending alert to app");
-            out.println("1");
+            out.println("4");
             t3 = in.readLine();
             if(t3 != null && !t3.equalsIgnoreCase(Integer.toString(SUtil.INVALID_SIGNAL_CODE))){
                 trial.setT2(t2);
