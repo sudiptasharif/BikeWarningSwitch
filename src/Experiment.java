@@ -1,5 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Calendar;
 
@@ -24,6 +25,10 @@ public class Experiment {
     }
 
     public void startExperiment(BufferedReader stdIn) throws IOException {
+        int code = getAlertSignalCodeFromUser(stdIn);
+        while(code == SUtil.INVALID_SIGNAL_CODE){
+            code = getAlertSignalCodeFromUser(stdIn);
+        }
         System.out.println(SUtil.SEND_ALART_SIGNAL);
         String userInput = stdIn.readLine();
         boolean isAlertSentSuccessfully = true;
@@ -34,7 +39,7 @@ public class Experiment {
                 userInput = stdIn.readLine();
             } else {
                 Trial trial = new Trial();
-                isAlertSentSuccessfully = switchSocket.sendAlertSignal(trial);
+                isAlertSentSuccessfully = switchSocket.sendAlertSignal(code, trial);
                 if(isAlertSentSuccessfully) {
                     trialList.add(trial);
                     System.out.println(SUtil.SEND_ALART_SIGNAL);
@@ -59,5 +64,20 @@ public class Experiment {
                 System.out.println("TODO: Will have to write to DB later.");
             }
         }
+    }
+
+    private int getAlertSignalCodeFromUser(BufferedReader stdIn) throws IOException {
+        System.out.print(SUtil.WARNING_CODE_MSG);
+        String userInput = stdIn.readLine();
+        int code = SUtil.INVALID_SIGNAL_CODE;
+        try{
+            code = Integer.parseInt(userInput);
+            if(!SUtil.isValidWarningCode(code)){
+                code = SUtil.INVALID_SIGNAL_CODE;
+            }
+        } catch (Exception e) {
+            System.out.println("\nInvalid Input");
+        }
+        return code;
     }
 }

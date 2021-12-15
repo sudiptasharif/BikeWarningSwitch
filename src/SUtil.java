@@ -14,7 +14,7 @@ public class SUtil {
     public static final String SAVE_EXPERIMENT = "Save experiment? (y/n)";
     public static final String INVALID_YN = "Invalid input. Please enter y/n";
     public static final String APP_NAME = "Bike Warning Switch Client";
-    public static final String APP_CLOSE_MSG = "Closing: " + SUtil.APP_NAME + "\n";
+    public static final String APP_CLOSE_MSG = "\nClosing: " + SUtil.APP_NAME + "\n";
     public static final String CONNECTION_SUCCESS = "Connection SUCCESSFUL\n";
     public static final String CONNECTION_FAILURE = "Connection FAILED\n\nMake sure server is on\nIn App Press Button: START LISTENING\n";
     public static final String INVALID_APP_USAGE = "Usage: java BikeWarningSwitch <host name> <port number>";
@@ -23,6 +23,9 @@ public class SUtil {
     public static final int SERVER_OFF = 1;
     public static final String APP_START_MSG = "Starting: " + SUtil.APP_NAME + "\n";
     public static final int INVALID_SIGNAL_CODE = -1;
+    public static final String WARNING_CODE_MSG = "\n1. Stop Sign + Tone\n2. Stop Sign + Voice\n3. Yield Sign + Tone\n4. Yield Sign + Voice\n\nSelect Warning: ";
+    public static final int WARNING_CODE_FIRST = 1;
+    public static final int WARNING_CODE_LAST = 4;
 
 
 
@@ -37,5 +40,9 @@ public class SUtil {
     public  static String formatDate(long timeInMillis, String dateFormatPattern) {
         SimpleDateFormat formatter = new SimpleDateFormat(dateFormatPattern);
         return formatter.format(new Date(timeInMillis));
+    }
+
+    public static boolean isValidWarningCode(int code) {
+        return code >= WARNING_CODE_FIRST && code <= WARNING_CODE_LAST;
     }
 }

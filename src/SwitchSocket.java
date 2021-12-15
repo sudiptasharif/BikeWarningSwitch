@@ -31,12 +31,12 @@ public class SwitchSocket {
         }
     }
 
-    public boolean sendAlertSignal(Trial trial) {
+    public boolean sendAlertSignal(int warningCode, Trial trial) {
         long t2 = System.currentTimeMillis();
         String t3;
         try {
             System.out.println(TAG + ": Sending alert to app");
-            out.println("4");
+            out.println(warningCode+"");
             t3 = in.readLine();
             if(t3 != null && !t3.equalsIgnoreCase(Integer.toString(SUtil.INVALID_SIGNAL_CODE))){
                 trial.setT2(t2);
