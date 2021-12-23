@@ -1,6 +1,11 @@
 import java.io.*;
 import java.net.*;
 
+/**
+ *
+ * @author sudiptasharif
+ */
+
 public class SwitchSocket {
     private static final String TAG = "SwitchSocket";
     private Socket socket;

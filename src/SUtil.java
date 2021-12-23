@@ -2,6 +2,11 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/**
+ *
+ * @author sudiptasharif
+ */
+
 public class SUtil {
     public static final String DATE_FORMAT_DATABASE = "yyyy-MM-dd HH:mm";
     public static final String DATE_FORMAT_USER_FRIENDLY = "yyyy-MM-dd hh:mm a";
