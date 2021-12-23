@@ -49,7 +49,7 @@ public class Experiment {
         }
         if(isAlertSentSuccessfully) {
             printExperiment();
-            saveExperiment(stdIn);
+            //saveExperiment(stdIn);
         }
     }
 
